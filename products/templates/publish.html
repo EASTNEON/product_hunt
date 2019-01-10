@@ -1,0 +1,35 @@
+{% extends "theme.html" %}
+
+{% block content %}
+
+<h2 align="center">发布新应用</h2>
+<br>
+<br>
+<center>
+<form  method='POST' action='{% url '发布页面' %}'>
+    {% csrf_token %}
+	APP　名　称：　
+	<input type="text" name="APP名称">
+	<br>
+	<br>
+	　　　介　　绍：　
+	<textarea cols=100 rows=10 name="介绍"></textarea> 
+	<br>
+	<br>
+	APP　链　接：　
+	<input type="text" name="APP链接">
+	<br>
+	<br>
+	APP图标(缩略图)：
+	<input type="file" name="APP图标">
+	<br>
+	<br>
+	　　　大　　图：
+	<input type="file" name="大图">
+	<br>
+	<br>
+	<input class="btn btn-primary" type="submit" value="发布">
+</form>
+</center>
+
+{% endblock content %}
